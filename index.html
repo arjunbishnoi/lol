@@ -18,11 +18,7 @@
             min-height: 100vh;
             font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
         .container {
@@ -55,6 +51,7 @@
             font-size: 1.5rem;
             max-width: 600px;
             margin: 2rem auto;
+            text-align: justify;
             line-height: 1.6;
             background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
@@ -71,10 +68,10 @@
         }
 
         button {
-            background: #ff6b6b;
+            background: #ffffff;
             border: none;
             padding: 1rem 2rem;
-            color: white;
+            color: rgb(0, 0, 0);
             border-radius: 25px;
             font-size: 1.2rem;
             cursor: pointer;
@@ -121,12 +118,10 @@
     <div class="floating-hearts"></div>
     <div class="container">
         <div class="heart">♥</div>
-        <h1>mansi, my love</h1>
-        
         <div class="message">
-            <p>🌟 to the most amazing girl in the universe,</p>
-            <p>every moment with you feels like a beautiful dream. your smile lights up my world, and your love fills my heart with endless joy. i cherish you more than words can express. 💖</p>
-            <p>yours forever,<br>arjun.</p>
+            <p style="font-size: 20px; margin-bottom: 10px;"> to the most amazing girl in the universe,</p>
+            <p style="font-size: 20px;">every moment with you feels like a beautiful dream. your smile lights up my world, and your love fills my heart with endless joy. i cherish you more than words can express.🌟💖</p>
+            <p style="font-size: 20px; font-style: italic; margin-top: 15px;">yours forever,<br>arjun.</p>
         </div>
 
         <button onclick="showSurprise()">click for a special surprise! 💌</button>
