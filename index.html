@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansi 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff9ff3, #f368e0);
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            color: #fff;
+        }
+
+        .heart {
+            font-size: 5rem;
+            animation: pulse 1.5s infinite;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeIn 2s;
+        }
+
+        .message {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            line-height: 1.6;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            animation: slideUp 1s ease-out;
+        }
+
+        .floating-hearts span {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: float 6s infinite linear;
+            opacity: 0;
+        }
+
+        button {
+            background: #ff6b6b;
+            border: none;
+            padding: 1rem 2rem;
+            color: white;
+            border-radius: 25px;
+            font-family: 'Pacifico', cursive;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background: #ff4757;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hidden-message {
+            display: none;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            animation: fadeIn 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts"></div>
+    <div class="container">
+        <div class="heart">♥</div>
+        <h1>Mansi, My Forever Love</h1>
+        
+        <div class="message">
+            <p>🌟 To the most amazing girl in the universe,</p>
+            <p>Every moment with you feels like a beautiful dream. Your smile lights up my world, and your love fills my heart with endless joy. I cherish you more than words can express. 💖</p>
+            <p>Forever yours,<br>Your Loving Partner</p>
+        </div>
+
+        <button onclick="showSurprise()">Click for a Special Surprise! 💌</button>
+        <div id="hiddenMessage" class="hidden-message">
+            No matter where life takes us, you'll always be my always. I love you to the moon and back! 🌙✨
+        </div>
+    </div>
+
+    <script>
+        function createHearts() {
+            const heartsContainer = document.querySelector('.floating-hearts');
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('span');
+                heart.innerHTML = '♥';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        function showSurprise() {
+            document.getElementById('hiddenMessage').style.display = 'block';
+            const confetti = document.createElement('div');
+            confetti.innerHTML = '🎉💖🎊';
+            confetti.style.position = 'fixed';
+            confetti.style.top = '50%';
+            confetti.style.left = '50%';
+            confetti.style.transform = 'translate(-50%, -50%)';
+            confetti.style.fontSize = '3rem';
+            confetti.style.animation = 'fadeIn 0.5s, pulse 1s infinite';
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => {
+                confetti.remove();
+            }, 2000);
+        }
+
+        // Initial hearts creation
+        createHearts();
+
+        // Add some random floating hearts periodically
+        setInterval(() => {
+            createHearts();
+        }, 5000);
+    </script>
+</body>
+</html>
